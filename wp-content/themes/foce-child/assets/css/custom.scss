@@ -1,0 +1,172 @@
+@keyframes move-down {
+  0% {
+      transform: translateY(-300px);
+      opacity: 0;
+  }  
+  100% {
+      transform: translateY(0);
+      visibility: visible;
+  }
+}
+
+/* Pour faire apparaître les éléments en montant et avec augmentation de l'opacité */
+@keyframes move-up {
+  0% {
+      transform: translateY(300px);
+      opacity: 0;
+  } 
+  100% {
+      transform: translateY(0);  
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.banner {
+  background-image: none;
+  .video {
+      position: absolute; 
+      z-index: 0;
+  }
+  .logobanner{
+      position: sticky;
+      top: 80px;
+      z-index: 10;
+      animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out, fade-in 1s forwards; /* Ajoutez fade-in pour l'effet de fondu */
+  }
+}
+
+/* CSS pour l'effet de fondu */
+.fade-in-title {
+  opacity: 0; /* Assurez-vous que le titre soit initialement invisible */
+  transition: opacity 2s ease; /* Transition pour une apparition en fondu */
+}
+
+.fade-in-title.visible {
+  opacity: 1; /* Lorsque la classe visible est ajoutée, faites apparaître le titre */
+}
+.slide-top  {
+  animation: move-up 2s 600ms both, float 6s 2s infinite ease-in-out, fade-in 1s forwards;
+  width: 100%;
+}
+.story__article::before{
+  animation: move-up 2s 600ms both, float 6s 2s infinite ease-in-out, fade-in 1s forwards;
+}
+.story__article::after {
+  animation:  move-up 2s 600ms both, float 6s 2s infinite ease-in-out, fade-in 1s forwards, rotation 4s infinite linear;
+}
+.story h2::after {
+  animation: rotation 4s infinite linear;
+}
+
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.h4 {
+  color: #FFF5E9;
+  font-size: 4.429rem;
+  background-image: url("../images/orange_characters_bg.png");
+  background-color: #FFF5E9;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1em 2em;
+  margin: 0;
+  background-position: center;
+  text-align: center;
+
+}
+
+#studio h2::before {
+  animation: rotation 4s infinite linear;
+}
+#studio h2::after {
+  animation: rotation 4s infinite linear;
+}
+.site-footer::before {
+  animation: rotation 4s infinite linear;
+}
+.site-footer::after {
+  animation: rotation 4s infinite linear;
+}
+.site-footer ul::after {
+  animation: rotation 4s infinite linear;
+}
+.nomination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pour répartir l'espace entre les éléments */
+}
+
+.h4 {
+  text-align: left;
+  margin: 0;
+}
+.clouds {
+  position: absolute;
+  top: -30%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.big-cloud,
+.little-cloud {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.big-cloud {
+  right: -200px; /* Ajustez la position initiale */
+  animation: move-left 30s linear infinite; /* Ajustez la vitesse et la durée du défilement */
+}
+
+.little-cloud {
+  right: -100px; /* Ajustez la position initiale */
+  animation: move-left 20s linear infinite; /* Ajustez la vitesse et la durée du défilement */
+}
+
+@keyframes move-left {
+  100% { transform: translateX(-200%); } /* Ajustez la distance de défilement */
+}
+
+swiper-container {
+  width: 100%;
+  /* height: 420px; */
+  opacity: 1;
+  margin-bottom: 7em;  
+  overflow: hidden;
+}
+
+
+swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide figure {
+  display: block;
+  /* max-height: 400px ; */
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;  
+}
